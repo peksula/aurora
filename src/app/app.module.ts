@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { OrienteerersComponent } from './orienteerers/orienteerers.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    OrienteerersComponent
   ],
   imports: [
     BrowserModule
