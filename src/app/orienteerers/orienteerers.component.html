@@ -1,6 +1,8 @@
 <h2>Orienteerers</h2>
 <ul class="orienteerers">
-  <li *ngFor="let ori of orienteerers">
-    <span class="badge">{{ori.id}}</span> {{ori.firstName}} {{ori.lastName}}
+  <li *ngFor="let orienteerer of orienteerers" [class.selected]="orienteerer === selectedOrienteerer" (click)="onSelect(orienteerer)">
+    <span class="badge">{{orienteerer.id}}</span> {{orienteerer.firstName}} {{orienteerer.lastName}}
   </li>
 </ul>
+
+<app-orienteerer-detail [orienteerer]="selectedOrienteerer"></app-orienteerer-detail>

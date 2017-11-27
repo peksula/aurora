@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ORIENTEERERS } from '../mock-orienteerers';
+import { Orienteerer } from '../orienteerer';
 
 @Component({
   selector: 'app-orienteerers',
@@ -9,10 +10,15 @@ import { ORIENTEERERS } from '../mock-orienteerers';
 export class OrienteerersComponent implements OnInit {
 
   orienteerers = ORIENTEERERS;
+  selectedOrienteerer: Orienteerer;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSelect(orienteerer: Orienteerer): void {
+    this.selectedOrienteerer = orienteerer;
   }
 
 }
