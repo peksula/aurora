@@ -14,8 +14,8 @@ export class Orienteerer {
     mapReading: SkillLevel;
     consistency: SkillLevel;
     concentration: SkillLevel;
-    courseSetting: SkillLevel; // reitinvalinta, eh?
-    controlFinding: SkillLevel; // rastinotto... hmm
+    routeChoosing: SkillLevel;
+    finishing: SkillLevel;
     nightSkills: SkillLevel;
 
     specialty: Specialty;

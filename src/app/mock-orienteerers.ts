@@ -15,8 +15,8 @@ export const ORIENTEERERS: Orienteerer[] = [
         mapReading: SkillLevel.titanic,
         consistency: SkillLevel.titanic,
         concentration: SkillLevel.titanic,
-        courseSetting: SkillLevel.titanic,
-        controlFinding: SkillLevel.titanic,
+        routeChoosing: SkillLevel.titanic,
+        finishing: SkillLevel.titanic,
         nightSkills: SkillLevel.titanic,
         specialty: Specialty.None
     },
@@ -33,8 +33,8 @@ export const ORIENTEERERS: Orienteerer[] = [
         mapReading: SkillLevel.titanic,
         consistency: SkillLevel.titanic,
         concentration: SkillLevel.titanic,
-        courseSetting: SkillLevel.titanic,
-        controlFinding: SkillLevel.titanic,
+        routeChoosing: SkillLevel.titanic,
+        finishing: SkillLevel.titanic,
         nightSkills: SkillLevel.titanic,
         specialty: Specialty.None
     }
