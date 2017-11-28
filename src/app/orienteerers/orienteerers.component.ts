@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ORIENTEERERS } from '../mock-orienteerers';
 import { Orienteerer } from '../orienteerer';
+import { OrienteererService } from '../orienteerer.service';
 
 @Component({
   selector: 'app-orienteerers',
@@ -9,16 +9,22 @@ import { Orienteerer } from '../orienteerer';
 })
 export class OrienteerersComponent implements OnInit {
 
-  orienteerers = ORIENTEERERS;
+  orienteerers: Orienteerer[];
   selectedOrienteerer: Orienteerer;
 
-  constructor() { }
+  constructor(private orienteererService: OrienteererService) { }
 
   ngOnInit() {
+    this.getOrienteerers();
   }
 
   onSelect(orienteerer: Orienteerer): void {
     this.selectedOrienteerer = orienteerer;
+  }
+
+  getOrienteerers(): void {
+    this.orienteererService.getOrienteerers()
+      .subscribe(orienteerers => this.orienteerers = orienteerers);
   }
 
 }
