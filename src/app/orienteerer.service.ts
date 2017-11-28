@@ -15,4 +15,9 @@ export class OrienteererService {
     return of(ORIENTEERERS);
   }
 
+  getOrienteerer(id: number): Observable<Orienteerer> {
+    this.messageService.add(`OrienteererService: fetched orienteerer id=${id}`);
+    return of(ORIENTEERERS.find(orienteerer => orienteerer.id === id));
+  }
+
 }

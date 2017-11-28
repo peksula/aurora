@@ -3,13 +3,12 @@ import { Orienteerer } from '../orienteerer';
 import { OrienteererService } from '../orienteerer.service';
 
 @Component({
-  selector: 'app-orienteerers',
-  templateUrl: './orienteerers.component.html',
-  styleUrls: ['./orienteerers.component.css']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: [ './dashboard.component.css' ]
 })
-export class OrienteerersComponent implements OnInit {
-
-  orienteerers: Orienteerer[];
+export class DashboardComponent implements OnInit {
+  orienteerers: Orienteerer[] = [];
 
   constructor(private orienteererService: OrienteererService) { }
 
@@ -19,7 +18,6 @@ export class OrienteerersComponent implements OnInit {
 
   getOrienteerers(): void {
     this.orienteererService.getOrienteerers()
-      .subscribe(orienteerers => this.orienteerers = orienteerers);
+      .subscribe(orienteerers => this.orienteerers = orienteerers.slice(1, 5));
   }
-
 }

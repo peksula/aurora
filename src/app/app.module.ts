@@ -9,6 +9,8 @@ import { OrienteererDetailComponent } from './orienteerer-detail/orienteerer-det
 import { OrienteererService } from './orienteerer.service';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageService } from './message.service';
+import { AppRoutingModule } from './/app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -16,11 +18,13 @@ import { MessageService } from './message.service';
     AppComponent,
     OrienteerersComponent,
     OrienteererDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [OrienteererService, MessageService],
   bootstrap: [AppComponent]
