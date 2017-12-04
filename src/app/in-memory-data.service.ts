@@ -1,8 +1,11 @@
+import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Orienteerer } from './orienteerer';
 import { Sex, SkillLevel, Specialty } from './constants';
 
-export const ORIENTEERERS: Orienteerer[] = [
-    {
+export class InMemoryDataService implements InMemoryDbService {
+  createDb() {
+    const orienteerers = [
+      {
         id: 1,
         firstName: 'Janne',
         lastName: 'Palvi',
@@ -38,4 +41,7 @@ export const ORIENTEERERS: Orienteerer[] = [
         nightSkills: SkillLevel.titanic,
         specialty: Specialty.None
     }
-];
+    ];
+    return {orienteerers};
+  }
+}

@@ -12,6 +12,7 @@ import { OrienteererService } from '../orienteerer.service';
 export class OrienteererDetailComponent implements OnInit {
 
   @Input() orienteerer: Orienteerer;
+  specialty: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,10 +27,25 @@ export class OrienteererDetailComponent implements OnInit {
   getOrienteerer(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.orienteererService.getOrienteerer(id)
-      .subscribe(orienteerer => this.orienteerer = orienteerer);
+      .subscribe(orienteerer => this.setOrienteerer(orienteerer));
   }
 
   goBack(): void {
     this.location.back();
+  }
+
+  save(): void {
+    this.orienteererService.updateOrienteerer(this.orienteerer)
+      .subscribe(() => this.goBack());
+  }
+
+  delete(): void {
+    this.orienteererService.deleteOrienteerer(this.orienteerer)
+      .subscribe(() => this.goBack());
+  }
+
+  setOrienteerer(orienteerer) {
+    this.orienteerer = orienteerer;
+    this.specialty = this.orienteererService.getSpecialty(orienteerer);
   }
 }

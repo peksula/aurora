@@ -1,25 +1,56 @@
 <div *ngIf="orienteerer">
   
-    <h2>{{ orienteerer.firstName }}  {{ orienteerer.lastName | uppercase }} Details</h2>
+    <h2>{{ orienteerer.firstName }} {{orienteerer.nickname}} {{ orienteerer.lastName | uppercase }} (#{{orienteerer.id}})</h2>
     <div>
-      <b>id: </b>{{orienteerer.id}}<br>
-      <b>nickname:</b> {{orienteerer.nickname}}<br>
-      <b>sex: </b>{{orienteerer.sex}}<br>
-      <b>nationality: </b>{{orienteerer.nationality}}<br>
-      <b>specialty: </b>{{orienteerer.specialty}}<br>
-      <p>
-        <b>endurance: </b>{{orienteerer.endurance}}/20<br>
-        <b>strength: </b>{{orienteerer.strength}}/20<br>
-        <b>speed: </b>{{orienteerer.speed}}/20<br>
-        <b>mapReading: </b>{{orienteerer.mapReading}}/20<br>
-        <b>consistency: </b>{{orienteerer.consistency}}/20<br>
-        <b>concentration: </b>{{orienteerer.concentration}}/20<br>
-        <b>routeChoosing: </b>{{orienteerer.routeChoosing}}/20<br>
-        <b>finishing: </b>{{orienteerer.finishing}}/20<br>
-        <b>nightSkills: </b>{{orienteerer.nightSkills}}/20<br>
-      </p>
+      {{orienteerer.nationality}}<br>
+
+      <h3>Attributes</h3>
+      <table>
+        <tr>
+            <td>endurance</td>
+            <td>{{orienteerer.endurance}}/20</td>
+        </tr>
+        <tr>
+          <td>strength</td>
+          <td>{{orienteerer.strength}}/20</td>
+        </tr>
+        <tr>
+          <td>speed</td>
+          <td>{{orienteerer.speed}}/20</td>
+        </tr>
+        <tr>
+          <td>mapReading</td>
+          <td>{{orienteerer.mapReading}}/20</td>
+        </tr>
+        <tr>
+          <td>consistency</td>
+          <td>{{orienteerer.consistency}}/20</td>
+        </tr>
+        <tr>
+          <td>concentration</td>
+          <td>{{orienteerer.concentration}}/20</td>
+        </tr>
+        <tr>
+          <td>routeChoosing</td>
+          <td>{{orienteerer.routeChoosing}}/20</td>
+        </tr>
+        <tr>
+          <td>finishing</td>
+          <td>{{orienteerer.finishing}}/20</td>
+        </tr>
+        <tr>
+          <td>nightSkills</td>
+          <td>{{orienteerer.nightSkills}}/20</td>
+        </tr>
+      </table>
+
+      <h3>Specialty</h3>
+      {{ specialty }}
 
     </div>
   </div>
-
+<!--
+  <button (click)="save()">save</button>
+  <button (click)="delete()">delete</button>
   <button (click)="goBack()">go back</button>
+-->
