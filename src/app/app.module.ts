@@ -16,6 +16,7 @@ import { OrienteerersComponent } from './orienteerers/orienteerers.component';
 import { OrienteererDetailComponent } from './orienteerer-detail/orienteerer-detail.component';
 import { OrienteererService } from './orienteerer.service';
 import { OrienteererSearchComponent } from './orienteerer-search/orienteerer-search.component';
+import { SetCourseComponent } from './set-course/set-course.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { OrienteererSearchComponent } from './orienteerer-search/orienteerer-sea
     OrienteererDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    OrienteererSearchComponent
+    OrienteererSearchComponent,
+    SetCourseComponent
   ],
   imports: [
     BrowserModule,

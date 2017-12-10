@@ -1,0 +1,18 @@
+agm-map {
+    height: 500px;
+}
+
+#course-details {
+    padding: 5px;
+    margin: 5px;
+    font: 12px verdana, sans-serif;
+    float: right;
+    width: 25%;
+}
+
+#map-container {
+    padding: 5px;
+    margin: 5px;
+    width: 70%;
+    font: 12px verdana, sans-serif;
+}
