@@ -2,8 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+
+import { AgmCoreModule } from '@agm/core';
+
 import { InMemoryDataService } from './in-memory-data.service';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -38,7 +40,10 @@ import { SetCourseComponent } from './set-course/set-course.component';
     // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    )
+    ),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDlr1wJPX514rCCJ-2AXcIrp5T10QzDdK8'
+    })
   ],
   providers: [OrienteererService, MessageService],
   bootstrap: [AppComponent]
