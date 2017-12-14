@@ -2,10 +2,44 @@
 
 <div id="course-details">
   <h3>Course</h3>
+  Total length: {{ totalLength }} meters
+
+  <ol>
+    <li *ngFor="let control of controls">
+      lat: {{ control.latitude }}, lng: {{ control.longitude }}<br>
+      height: {{ control.height }}<br>
+      <button class="delete" title="delete" (click)="removeControl(control)">delete</button>
+    </li>
+  </ol>
 </div>
 
 <div id="map-container">
-  <agm-map [latitude]="lat" [longitude]="lng">
+  <agm-map
+    [latitude]="lat"
+    [longitude]="lng"
+    [zoom]="zoom"
+    (mapClick)="mapClicked($event)">
+
+    <agm-circle *ngFor="let control of controls; let i=index"
+      [latitude]="control.latitude"
+      [longitude]="control.longitude"
+      [circleDraggable]="false"
+      [fillOpacity]="0.50"
+      [fillColor]="'red'"
+      [radius]="10">
+    </agm-circle>
+
+    <agm-polyline
+      [visible]="true"
+      [strokeColor]="'red'"
+      [strokeWeight]="1">
+      <agm-polyline-point
+        *ngFor="let control of controls; let i=index"
+        [latitude]="control.latitude"
+        [longitude]="control.longitude">
+      </agm-polyline-point>
+    </agm-polyline>
+
   </agm-map>
 </div>
 
