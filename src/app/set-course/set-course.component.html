@@ -24,15 +24,19 @@
       [latitude]="control.latitude"
       [longitude]="control.longitude"
       [circleDraggable]="false"
-      [fillOpacity]="0.50"
+      [fillOpacity]="0.10"
       [fillColor]="'red'"
+      [strokeColor]="'red'"
+      [strokeWeight]="5"
+      [strokePosition]="0"
       [radius]="10">
     </agm-circle>
 
     <agm-polyline
       [visible]="true"
       [strokeColor]="'red'"
-      [strokeWeight]="1">
+      [strokeWeight]="1"
+      [strokeOpacity]="0.2">
       <agm-polyline-point
         *ngFor="let control of controls; let i=index"
         [latitude]="control.latitude"
