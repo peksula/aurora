@@ -17,7 +17,6 @@ import { MessageService } from './message.service';
 import { OrienteerersComponent } from './orienteerers/orienteerers.component';
 import { OrienteererDetailComponent } from './orienteerer-detail/orienteerer-detail.component';
 import { OrienteererService } from './orienteerer.service';
-import { OrienteererSearchComponent } from './orienteerer-search/orienteerer-search.component';
 import { SetCourseComponent } from './set-course/set-course.component';
 
 @NgModule({
@@ -27,7 +26,6 @@ import { SetCourseComponent } from './set-course/set-course.component';
     OrienteererDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    OrienteererSearchComponent,
     SetCourseComponent
   ],
   imports: [
