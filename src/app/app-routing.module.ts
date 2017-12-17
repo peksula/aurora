@@ -4,13 +4,16 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { OrienteerersComponent } from './orienteerers/orienteerers.component';
 import { OrienteererDetailComponent } from './orienteerer-detail/orienteerer-detail.component';
 import { SetCourseComponent } from './set-course/set-course.component';
+import { TracksComponent } from './tracks/tracks.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'orienteerer/:id', component: OrienteererDetailComponent },
   { path: 'orienteerers', component: OrienteerersComponent },
-  { path: 'setcourse' , component: SetCourseComponent }
+  { path: 'setcourse' , component: SetCourseComponent },
+  { path: 'tracks', component: TracksComponent },
+  { path: 'track/:id', component: SetCourseComponent },
 ];
 
 @NgModule({

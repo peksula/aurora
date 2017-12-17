@@ -18,6 +18,8 @@ import { OrienteerersComponent } from './orienteerers/orienteerers.component';
 import { OrienteererDetailComponent } from './orienteerer-detail/orienteerer-detail.component';
 import { OrienteererService } from './orienteerer.service';
 import { SetCourseComponent } from './set-course/set-course.component';
+import { TrackService } from './track.service';
+import { TracksComponent } from './tracks/tracks.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { SetCourseComponent } from './set-course/set-course.component';
     OrienteererDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    SetCourseComponent
+    SetCourseComponent,
+    TracksComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,7 @@ import { SetCourseComponent } from './set-course/set-course.component';
       apiKey: 'AIzaSyDlr1wJPX514rCCJ-2AXcIrp5T10QzDdK8'
     })
   ],
-  providers: [OrienteererService, MessageService],
+  providers: [OrienteererService, MessageService, TrackService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
