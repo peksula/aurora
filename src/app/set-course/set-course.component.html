@@ -1,14 +1,18 @@
 <h2>Set course</h2>
 
 <div id="course-details">
-  <h3>Course</h3>
-  Total length: {{ totalLength }} meters
+  <h2>Course</h2>
+  Total length: {{ totalLength | number: '1.1-1' }} meters
 
+  
   <ol>
     <li *ngFor="let control of controls">
-      lat: {{ control.latitude }}, lng: {{ control.longitude }}<br>
+      lat: {{ control.latitude }}<br>
+      lng: {{ control.longitude }}<br>
+      <!--
       height: {{ control.height }}<br>
-      <button class="delete" title="delete" (click)="removeControl(control)">delete</button>
+      -->
+      <span class="delete-button" (click)="removeControl(control)">[delete]</span>
     </li>
   </ol>
 </div>

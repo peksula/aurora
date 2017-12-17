@@ -16,3 +16,7 @@ agm-map {
     width: 70%;
     font: 12px verdana, sans-serif;
 }
+
+.delete-button {
+    border-width: 1px;
+}

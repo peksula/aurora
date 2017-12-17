@@ -1,8 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { Control } from '../control';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { MouseEvent as AGMMouseEvent } from '@agm/core';
+
 import { LatLng } from '@agm/core/services/google-maps-types';
 import {} from '@types/googlemaps';
+
+import { Control } from '../control';
+import { Track } from '../track';
+import { TrackService } from '../track.service';
 
 @Component({
   selector: 'app-set-course',
@@ -18,11 +23,28 @@ export class SetCourseComponent implements OnInit {
 
   controls: Control[];
 
-  constructor() {
+  @Input() track: Track;
+
+  constructor(
+    private route: ActivatedRoute,
+    private trackService: TrackService) {
     this.controls = [];
   }
 
   ngOnInit() {
+    this.getTrack();
+  }
+
+  getTrack(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    if (id > 0) { // id is 0 when there is no existing track to load, but new one to create
+      this.trackService.getTrack(id)
+        .subscribe(track => this.setTrack(track));
+    }
+  }
+
+  setTrack(track) {
+    this.track = track;
   }
 
   mapClicked($event: AGMMouseEvent) {
