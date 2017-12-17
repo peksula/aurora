@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Control } from '../control';
 import { MouseEvent as AGMMouseEvent } from '@agm/core';
 import { LatLng } from '@agm/core/services/google-maps-types';
+import {} from '@types/googlemaps';
 
 @Component({
   selector: 'app-set-course',
